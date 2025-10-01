@@ -1,3 +1,7 @@
+
+<img width="200" height="200" alt="tbe" src="https://github.com/user-attachments/assets/79466bf3-1bed-43dc-b941-c8b043c1198e" />
+
+
 # trilinos-build-easy
 
 This project provides an example configuration of the Trilinos numerical library[^1] and helper scripts.
