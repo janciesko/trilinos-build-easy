@@ -125,12 +125,16 @@ clear_build() {
 # -----------------------------------------------------------------------------
 # configure_trilinos: run CMake with the build‐easy wrapper
 # -----------------------------------------------------------------------------
+# Nota bene:  Tpetra switch needed to configure & build Tpetra’s test executables (unit and performance drivers)
 configure_trilinos() {
   clear_build
   cmake \
     -S "$TRILINOS_DIR" \
     -B "$TRILINOS_BUILD_DIR" \
     -DCMAKE_INSTALL_PREFIX="$TRILINOS_INSTALL_DIR" \
+    -DBUILD_TESTING=ON \
+    -DTrilinos_ENABLE_TESTS=ON \
+    -DTpetra_ENABLE_TESTS=ON \
     -C "$CMAKE_WRAPPER_DIR/build.cmake" \
   |& tee "$TRILINOS_BUILD_DIR/configure.log"
 }
